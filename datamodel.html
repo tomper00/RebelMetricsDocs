@@ -1,0 +1,909 @@
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Field name</th>
+      <th>Description</th>
+      <th>Data type</th>
+      <th>Example</th>
+      <th>Area</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>idvisitor</td>
+      <td>The ID of the visitor. (a visitor can have multiple visits (idvisit). </td>
+      <td>STRING</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>   
+    <tr>
+      <td>idvisit</td>
+      <td>The ID of this visit.</td>
+      <td>UINT64</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>     
+    <tr>
+      <td>country_full</td>
+      <td>Country code converted to Full countrynam</td>
+      <td>STRING</td>
+      <td>Sweden, Finland, Norway etc</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>channel</td>
+      <td>Traffic Channels </td>
+      <td>STRING</td>
+      <td>Can be: Direct, Search,Social,Website or Campaign</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>device_type_long</td>
+      <td>Device type</td>
+      <td>STRING</td>
+      <td>Can be Mobile, Tablet, Desktop or Other</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>pagetitle_with_link</td>
+      <td>The title of a page linking to the page</td>
+      <td>STRING</td>
+      <td><code><a href="http://example.com"> Example.com title</a></code></td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>media_length</td>
+      <td>Length of this media in seconds</td>
+      <td>NULLABLE(STRING)</td>
+      <td>120</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>media_progress</td>
+      <td>Progress of the media (defined by the last second that was consumed).</td>
+      <td>NULLABLE(STRING)</td>
+      <td>12</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>media_title</td>
+      <td>Title of a media</td>
+      <td>NULLABLE(STRING)</td>
+      <td>My Video Title</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>media_type</td>
+      <td>Type of media played</td>
+      <td>NULLABLE(STRING)</td>
+      <td>(1 = video, 2 = audio).</td>
+      <td>Action</td>
+    </tr>    
+    <tr>
+      <td>media_file</td>
+      <td>Link to media files</td>
+      <td>STRING</td>
+      <td>N/A</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>media_player_name</td>
+      <td>The name of the media player.</td>
+      <td>NULLABLE(STRING)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>media_watched_time</td>
+      <td>The sum of the time the user watched/listened the media.</td>
+      <td>NULLABLE(STRING)</td>
+      <td>300</td>
+      <td>Visit</td>
+    </tr>    
+    <tr>
+      <td>media_time_to_initial_play</td>
+      <td> The time it took until the user started the media.</td>
+      <td>NULLABLE(STRING)</td>
+      <td>4</td>
+      <td>Visit</td>
+    </tr>    
+    <tr>
+      <td>url_part_1</td>
+      <td>Return first part of the url</td>
+      <td>STRING</td>
+      <td>For example if the url is http://example.com/part1 this will return part1</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>url_part_2</td>
+      <td>Part 2 of the url</td>
+      <td>STRING</td>
+      <td>For example if the url is http://example.com/part1/part2 this will return part2</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>url_part_3</td>
+      <td>Part 2 of the url</td>
+      <td>STRING</td>
+      <td>For example if the url is http://example.com/part1/part2 this will return part2</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>filename</td>
+      <td>If a link or url contains a filename it can be extracted</td>
+      <td>STRING</td>
+      <td>We are using a database function basename(pageurl)</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>custom_dimension_1</td>
+      <td>The custom dimension n1 (of type action)</td>
+      <td>NULLABLE(STRING)</td>
+      <td>Whatever data that is sent.</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>visit_dimension_1</td>
+      <td>The custom dimension n1 (of type visit)</td>
+      <td>NULLABLE(STRING)</td>
+      <td>Whatever data that is sent.</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>custom_dimension_2</td>
+      <td>The custom dimension n2 (of type action)</td>
+      <td>NULLABLE(STRING)</td>
+      <td>Whatever data that is sent.</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>visit_dimension_2</td>
+      <td>The custom dimension n2 (of type visit)</td>
+      <td>NULLABLE(STRING)</td>
+      <td>Whatever data that is sent.</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>custom_dimension_3</td>
+      <td>The custom dimension n3 (of type action)</td>
+      <td>NULLABLE(STRING)</td>
+      <td>Whatever data that is sent.</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>visit_dimension_3</td>
+      <td>The custom dimension n1 (of type visit)</td>
+      <td>NULLABLE(STRING)</td>
+      <td>Whatever data that is sent.</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>custom_dimension_4</td>
+      <td>The custom dimension n4 (of type action)</td>
+      <td>NULLABLE(STRING)</td>
+      <td>Whatever data that is sent.</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>visit_dimension_4</td>
+      <td>The custom dimension n4 (of type visit)</td>
+      <td>NULLABLE(STRING)</td>
+      <td>Whatever data that is sent.</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>custom_dimension_5</td>
+      <td>The custom dimension n5 (of type action)</td>
+      <td>NULLABLE(STRING)</td>
+      <td>Whatever data that is sent.</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>visit_dimension_5</td>
+      <td>The custom dimension n5 (of type visit)</td>
+      <td>NULLABLE(STRING)</td>
+      <td>Whatever data that is sent.</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>visit_last_action_time</td>
+      <td>The timestamp of the last action in the visit.</td>
+      <td>DATETIME64(9)</td>
+      <td>N/A</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>visit_first_action_time</td>
+      <td>The timestamp of the first action in the visit.</td>
+      <td>DATETIME64(9)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>server_time</td>
+      <td>Serer time of action</td>
+      <td>DATETIME64(9)</td>
+      <td>For Example: 2024-01-17 12:49</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>visitor_days_since_order</td>
+      <td>Days since first visit of this visitor</td>
+      <td>NULLABLE(FLOAT64)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>last_idlink_va</td>
+      <td>The action id, this is unique</td>
+      <td>NULLABLE(UINT64)</td>
+      <td>123456</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>config_device_type</td>
+      <td>Numeric device type 1 for desktop, 2 for tablet, 3 for mobile.</td>
+      <td>NULLABLE(UINT64)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>search_count</td>
+      <td>Number of searches</td>
+      <td>NULLABLE(UINT64)</td>
+      <td>3</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>interaction_position</td>
+      <td>The position of this action in a visit. First get 1, second 2 etc.</td>
+      <td>NULLABLE(UINT64)</td>
+      <td>1, 2, 3 etc</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>time_spent</td>
+      <td>the amount of time spent on this action (set by the CustomDimensions plugin) </td>
+      <td>NULLABLE(UINT64)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>visit_exit_url_path_full</td>
+      <td>Last url in this visit displayed as a full path with parameters</td>
+      <td>NULLABLE(STRING)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>visit_entry_url_path_full</td>
+      <td>First url in this visit displayed as a full path with parameters</td>
+      <td>NULLABLE(STRING)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>visit_exit_url_domain</td>
+      <td>Domain from last url in this visit displayed as a full path with parameters</td>
+      <td>NULLABLE(STRING)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>visit_entry_url_domain</td>
+      <td>Domain from first url in this visit displayed as a full path with parameters</td>
+      <td>NULLABLE(STRING)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>referer_url_path_full</td>
+      <td>Path from first url in this visit displayed as a full path with parameters</td>
+      <td>NULLABLE(STRING)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>visit_exit_url_path</td>
+      <td>Path from last url in this visit displayed as a full path with parameters</td>
+      <td>NULLABLE(STRING)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>visit_entry_url_path</td>
+      <td>Path from first url in this visit displayed as a full path with parameters</td>
+      <td>NULLABLE(STRING)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>prevpageurl_path_full</td>
+      <td>Path from previus page (referrer) displayed as a full path with parameters</td>
+      <td>NULLABLE(STRING)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>pageurl_path_full</td>
+      <td>Path from url with parameters</td>
+      <td>NULLABLE(STRING)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>referer_url_domain</td>
+      <td>Domain from referer url</td>
+      <td>NULLABLE(STRING)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>referer_url_path</td>
+      <td>Path from referer url</td>
+      <td>NULLABLE(STRING)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>visit_exit_name</td>
+      <td>the ID of the page title action type of the visit's last action</td>
+      <td>NULLABLE(STRING)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>visit_entry_name</td>
+      <td>the ID of the page title action type of this visit's first action</td>
+      <td>NULLABLE(STRING)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>time_spent_ref</td>
+      <td>This column contains the time spent by the visitor on their previous pageview.</td>
+      <td>NULLABLE(STRING)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>visit_exit_url</td>
+      <td>Last url in this visit</td>
+      <td>NULLABLE(STRING)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>visit_entry_url</td>
+      <td>First url in this visit</td>
+      <td>NULLABLE(STRING)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>campaign_name</td>
+      <td>Campaign name from url paramters refering to this site for example https://examle.com?mtm_campaign=Campaignname</td>
+      <td>NULLABLE(STRING)</td>
+      <td>Campaignname</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>search_category</td>
+      <td>Search categoru from site search (if this data exists)</td>
+      <td>NULLABLE(STRING)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>campaign_content</td>
+      <td>Campaign content from url paramters refering to this site for example https://examle.com?mtm_campaign=Campaignname&mtm_content=Content</td>
+      <td>NULLABLE(STRING)</td>
+      <td>Content</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>campaign_source</td>
+      <td>Campaign source from url paramters refering to this site for example https://examle.com?mtm_campaign=Campaignname&mtm_source=Source</td>
+      <td>NULLABLE(STRING)</td>
+      <td>Source</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>campaign_medium</td>
+      <td>Campaign medium from url paramters refering to this site for example https://examle.com?mtm_campaign=Campaignname&mtm_medium=Medium</td>
+      <td>NULLABLE(STRING)</td>
+      <td>Medium</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>campaign_keyword</td>
+      <td>Campaign keyword from url paramters refering to this site for example https://examle.com?mtm_campaign=Campaignname&mtm_keyword=Keyword</td>
+      <td>NULLABLE(STRING)</td>
+      <td>Keyword</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>campaign_id</td>
+      <td>Campaign id from url paramters refering to this site for example https://examle.com?mtm_campaign=Campaignname&mtm_id=Id</td>
+      <td>NULLABLE(STRING)</td>
+      <td>Id</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>prevpageurl_domain</td>
+      <td>The domain name from the previous pageview url (referer)</td>
+      <td>NULLABLE(STRING)</td>
+      <td>If the last url was http://example.com/url?param=1 this will return example.com</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>pageurl_domain</td>
+      <td>The domain name from the current pageview url (referer)</td>
+      <td>NULLABLE(STRING)</td>
+      <td>If the url is http://example.com/url?param=1 this will return example.com</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>prevpageurl_path</td>
+      <td>The path from the previous pageview url (referer) without parameters</td>
+      <td>NULLABLE(STRING)</td>
+      <td>If the last url was http://example.com/url?param=1 this will return /url</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>pageurl_path</td>
+      <td>The path from the url without parameters</td>
+      <td>NULLABLE(STRING)</td>
+      <td>If the url is http://example.com/url?param=1 this will return /url</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>media_resource</td>
+      <td>The resource of the media (typically a filename or url location).</td>
+      <td>NULLABLE(STRING)</td>
+      <td></td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>search_keyword</td>
+      <td>The query parameters the site uses to hold internal site search keywords. This is a comma separated list.</td>
+      <td>NULLABLE(STRING)</td>
+      <td>searchsting1, searchsting2</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>event_category</td>
+      <td>Value from your custom events. This normally describes the type of events you want to track. </td>
+      <td>NULLABLE(STRING)</td>
+      <td>For example, Link Clicks, Videos, Outbound Links, and Form Events.</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>event_action</td>
+      <td>Value from your custom events.  This is the specific action that is taken.  </td>
+      <td>NULLABLE(STRING)</td>
+      <td>For example, with the Video category, you might have a Play, Pause and Complete action.</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>eventname</td>
+      <td>Value from your custom events. This is usually the title of the element that is being interacted with, to aid with analysis.</td>
+      <td>NULLABLE(STRING)</td>
+      <td>For example, it could be the name of a Video that was played or the specific form that is being submitted.</td>
+      <td>Action</td>
+    </tr>    
+    <tr>
+      <td>content_name</td>
+      <td>The content name assigned if you are using Content tracking</td>
+      <td>NULLABLE(STRING)</td>
+      <td>N/A</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>content_interaction</td>
+      <td>The position if you are using Content tracking</td>
+      <td>NULLABLE(STRING)</td>
+      <td>My custom Name</td>
+      <td>Action</td>
+    </tr>    
+    <tr>
+      <td>content_target</td>
+      <td>The target if you are using Content tracking</td>
+      <td>NULLABLE(STRING)</td>
+      <td>N/A</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>location_region</td>
+      <td>The region code from your visitor based on its ip adress https://en.wikipedia.org/wiki/ISO_3166-2</td>
+      <td>NULLABLE(STRING)</td>
+      <td>AB (Stockholm) or BE (Berlin)</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>referer_name</td>
+      <td></td>
+      <td>NULLABLE(STRING)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>content_piece</td>
+      <td></td>
+      <td>NULLABLE(STRING)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>referer_keyword</td>
+      <td></td>
+      <td>NULLABLE(STRING)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>user_id</td>
+      <td>Matomo User ID is an enhanced tracking feature you can use id you have user consents</td>
+      <td>NULLABLE(STRING)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>prevpagetitle</td>
+      <td>Title from the previous pageview</td>
+      <td>NULLABLE(STRING)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>pagetitle</td>
+      <td>The title of the page.</td>
+      <td>NULLABLE(STRING)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>prevpageurl</td>
+      <td>Url from the previous pageview</td>
+      <td>NULLABLE(STRING)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>pageurl</td>
+      <td>The URL of the page.</td>
+      <td>NULLABLE(STRING)</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>visitor_days_since_last</td>
+      <td>Days since this visitor last visited the site</td>
+      <td>FLOAT64</td>
+      <td>11</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>visitor_days_since_first</td>
+      <td>Days since this visitor first time visited the site</td>
+      <td>FLOAT64</td>
+      <td>22</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>visit_total_searches</td>
+      <td>Total internal searches this visitor made in this visit</td>
+      <td>UINT64</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>visit_total_interactions</td>
+      <td>Total interactions searches this visitor made in this visit. Interactions includes forms interaction, heaptmaps tracking etc in relation to actions</td>
+      <td>UINT64</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>visit_total_actions</td>
+      <td>Total actions searches this visitor made in this visit</td>
+      <td>UINT64</td>
+      <td>N/A</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>visit_goal_buyer</td>
+      <td>Whether the visitor ordered something during this visit or not</td>
+      <td>UINT64</td>
+      <td>1 (true), 0 (false)</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>visit_goal_converted</td>
+      <td>Whether this visit converted a goal or not</td>
+      <td>UINT64</td>
+      <td>1 (true), 0 (false)</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>visit_total_events</td>
+      <td>Total events for the visitor in this visit</td>
+      <td>UINT64</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>visit_total_time</td>
+      <td>The total elapsed time of the visit</td>
+      <td>UINT64</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>visitor_count_visits</td>
+      <td>Total number of visits for this visitor</td>
+      <td>UINT64</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>config_realplayer</td>
+      <td>Whether the visitor's browser can play realplayer media files or not</td>
+      <td>UINT64</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>config_java</td>
+      <td>Whether the visitor's browser can run Java or not</td>
+      <td>UINT64</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>config_windowsmedia</td>
+      <td>Whether the visitor's browser uses windows media player to play media files</td>
+      <td>UINT64</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>config_flash</td>
+      <td>Whether the visitor's browser can view flash files or not</td>
+      <td>UINT64</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>idlink_va</td>
+      <td>The ID of the specific visit action that resulted in this conversion</td>
+      <td>UINT64</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>config_quicktime</td>
+      <td>Whether the visitor's browser uses quicktime to play media files or not</td>
+      <td>UINT64</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>config_cookie</td>
+      <td>Whether the visitor's browser has cookies enabled or not</td>
+      <td>UINT64</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>config_pdf</td>
+      <td>Whether the visitor's browser can view PDF files or not</td>
+      <td>UINT64</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>config_silverlight</td>
+      <td>Whether the visitor's browser can run silverlight programs or not</td>
+      <td>UINT64</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>referer_type</td>
+      <td>the type of this visitor's referrer. </td>
+      <td>UINT64</td>
+      <td>Can be one of the following values: Direct, SEARCH_ENGINE, WEBSITE, CAMPAIGN, SOCIAL_NETWORK </td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>visitor_returning</td>
+      <td>Whether the visit is the first visit for this visitor or not</td>
+      <td>UINT64</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>profilable</td>
+      <td>ither 0 or 1. If no visitorId or userId was used, then the value is 0. This means no profile can be created for this specific visitor meaning visitor profile would in most cases only show one visit, features like new/returning visit won't work for this visitor etc.</td>
+      <td>UINT64</td>
+      <td>0 or 1</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>idsite</td>
+      <td>The ID of the website being tracked.</td>
+      <td>UINT64</td>
+      <td>N/A</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>location_browser_lang</td>
+      <td>A string describing the language used in the visitor's browser</td>
+      <td>STRING</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>config_device_brand</td>
+      <td>2 letter device brand name</td>
+      <td>STRING</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>config_browser_longname</td>
+      <td>Long name of the Browser</td>
+      <td>STRING</td>
+      <td>Chrome, Firefox etc</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>config_browser_shortname</td>
+      <td>Short name of the Broweser</td>
+      <td>STRING</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>config_browser_engine</td>
+      <td>Browser engine name</td>
+      <td>STRING</td>
+      <td>Blink, Webkit etc</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>config_browser_version</td>
+      <td>Browser version</td>
+      <td>STRING</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>config_device_model</td>
+      <td>Device model name </td>
+      <td>STRING</td>
+      <td>For example: generic desktop, iPhone, Galaxy S21 5G or generic smartphone	</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>config_os_version</td>
+      <td>Version of operating system</td>
+      <td>STRING</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>location_latitude</td>
+      <td>Latitude looked up from visitors IP</td>
+      <td>STRING</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>location_city</td>
+      <td>The city of the visitor.</td>
+      <td>STRING</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>location_country</td>
+      <td>The country of the visitor.</td>
+      <td>STRING</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>location_longitude</td>
+      <td>Longitude looked up from visitors IP</td>
+      <td>STRING</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>traffic_segment</td>
+      <td>traffic segment</td>
+      <td>STRING</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>config_gears</td>
+      <td>config_gears</td>
+      <td>STRING</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>visitor_localtime</td>
+      <td>The local time of the visitor.</td>
+      <td>STRING</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>action_type</td>
+      <td>The type of action (e.g., PAGE_URL, EVENT_CATEGORY).</td>
+      <td>STRING</td>
+      <td>N/A</td>
+      <td>Action</td>
+    </tr>
+    <tr>
+      <td>location_ip</td>
+      <td>The IP address of the visitor.</td>
+      <td>STRING</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>matomo_site</td>
+      <td>The name of the site in Matomo</td>
+      <td>STRING</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>config_director</td>
+      <td></td>
+      <td>STRING</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>config_id</td>
+      <td>a hash of all the visit's configuration options, including the OS, browser name, browser version, browser language, IP address and all browser plugin information</td>
+      <td>STRING</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>config_resolution</td>
+      <td>a string identifying the screen resolution the visitor used to make this visit (eg, '1024x768')</td>
+      <td>STRING</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>config_os</td>
+      <td>a short string identifiying the operating system used to make this visit. </td>
+      <td>STRING</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>referer_url</td>
+      <td>the referrer URL; its meaning depends on the specific referrer type</td>
+      <td>STRING</td>
+      <td>N/A</td>
+      <td>Visit</td>
+    </tr>
+    <tr>
+      <td>url_prefix</td>
+      <td>if the name is a URL this refers to the prefix of the URL.</td>
+      <td>STRING</td>
+      <td>0: 'http://', 1: 'http://www.', 2: 'https://', 3: 'https://www.'</td>
+      <td>Visit</td>
+    </tr>
+  </tbody>
+</table>
